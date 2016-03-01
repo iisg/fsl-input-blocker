@@ -1,4 +1,4 @@
-angular.module('demo', ['ui.bootstrap', 'ui.bootstrap.tpls', 'fsl.bootstrap.inputblocker'])
+angular.module('demo', ['ui.bootstrap', 'ui.bootstrap.tpls', 'fslab.inputblocker'])
 .controller('DemoCtrl', function($scope) {
   $scope.selected = undefined;
   $scope.browsers = [
