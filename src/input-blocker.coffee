@@ -1,4 +1,4 @@
-angular.module('fsl.bootstrap.inputblocker', []).directive 'fslInputBlocker', ($compile) ->
+angular.module('fslab.inputblocker', []).directive 'fslabInputBlocker', ($compile) ->
   inputBlocker = """
 <span
   class="form-control input-blocker"
@@ -18,7 +18,7 @@ angular.module('fsl.bootstrap.inputblocker', []).directive 'fslInputBlocker', ($
   require: 'ngModel'
   scope:
     value: '=ngModel'
-    inputBlocker: '@fslInputBlocker'
+    inputBlocker: '@fslabInputBlocker'
   link: (scope, element, attrs, ngModel) ->
     element.addClass('has-input-blocker')
     element.after($compile(inputBlocker)(scope))

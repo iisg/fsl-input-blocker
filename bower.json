@@ -1,5 +1,5 @@
 {
-  "name": "fsl-input-blocker",
+  "name": "angular-boostrap-input-blocker",
   "version": "0.1.0",
   "authors": [
     "Piotr Beres <piotr.beres@gmail.com>"
@@ -13,7 +13,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/iisg/fsl-input-blocker"
+    "url": "https://github.com/iisg/input-blocker"
   },
   "moduleType": [
     "globals"
