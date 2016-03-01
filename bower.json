@@ -1,0 +1,55 @@
+{
+  "name": "fsl-input-blocker",
+  "version": "0.1.0",
+  "authors": [
+    "Piotr Beres <piotr.beres@gmail.com>"
+  ],
+  "description": "Angular directive for bootstrap. Allows blocking input with user provided template. Mostly useful for typeahead inputs.",
+  "main": [
+    "dist/module.js",
+    "dist/templates.min.js",
+    "dist/styles.css"
+  ],
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iisg/fsl-input-blocker"
+  },
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "bootstrap",
+    "angular",
+    "agh",
+    "typeahead",
+    "block",
+    "input",
+    "template"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "coffeelint.json",
+    "Gulpfile.coffee",
+    "Gulpfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "angular": "1.4.9",
+    "bootstrap": "3.3.5",
+    "fontawesome": "4.5.0"
+  },
+  "overrides": {
+    "angular": {
+      "main": {
+        "production": "angular.min.js",
+        "development": "angular.js"
+      }
+    }
+  }
+}

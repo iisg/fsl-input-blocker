@@ -1,0 +1,18 @@
+.has-input-blocker:not(.input-blocker-active) ~ .input-blocker {
+  display: none; }
+
+.has-input-blocker.input-blocker-active {
+  display: none; }
+
+.input-blocker {
+  position: relative;
+  padding-right: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%; }
+  .input-blocker .input-blocker-button {
+    position: absolute;
+    right: 5px;
+    top: 7px;
+    cursor: pointer; }
