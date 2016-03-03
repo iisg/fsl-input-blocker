@@ -1,6 +1,6 @@
 {
   "name": "angular-boostrap-input-blocker",
-  "version": "0.1.2",
+  "version": "0.1.1",
   "description": "Angular directive for bootstrap. Allows blocking input with user provided template. Mostly useful for typeahead inputs.",
   "license": "MIT",
   "repository": {},
