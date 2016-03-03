@@ -19,7 +19,7 @@ gulp.task 'lint', ->
   .pipe coffeelint.reporter()
   .pipe coffeelint.reporter('fail')
 
-gulp.task 'coffee', ['lint'], ->
+gulp.task 'coffee', ->
   gulp.src 'src/**/*.coffee'
   .pipe coffee({bare: true})
   .pipe ngAnnotate()
@@ -45,4 +45,4 @@ gulp.task 'watch', ['scripts.normal'], ->
   gulp.watch 'src/**/*.coffee', ['scripts.normal']
   gulp.watch 'sass/**/*.scss', ['styles']
 
-gulp.task 'default', ['clean', 'scripts', 'styles']
+gulp.task 'default', ['clean', 'lint', 'scripts', 'styles']
