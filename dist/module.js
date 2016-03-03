@@ -1,6 +1,6 @@
-angular.module('fslab.inputblocker', []).directive('fslabInputBlocker', ["$compile", function($compile) {
-  var inputBlocker;
-  inputBlocker = "<span\n  class=\"form-control input-blocker\"\n  disabled=\"disabled\">\n  <span ng-if='!inputBlocker'>\n    {{viewValue()}}\n  </span>\n  <span ng-if=\"inputBlocker\"\n    ng-include='inputBlocker'>\n  </span>\n  <div class=\"input-blocker-button text-danger\"\n    ng-click=\"clearModel()\">\n    <span class=\"fa fa-edit\"></span>\n  </div>\n</span>";
+angular.module('fslab.inputblocker', []).directive('fslabInputBlocker', ["$compile", "$timeout", function($compile, $timeout) {
+  var inputBlockerTemplate;
+  inputBlockerTemplate = "<span class=\"form-control input-blocker\" readonly>\n  <span ng-if='!inputBlocker'>\n    {{viewValue()}}\n  </span>\n  <span ng-if=\"inputBlocker\"\n    ng-include='inputBlocker'>\n  </span>\n  <div class=\"input-blocker-button text-danger\"\n    ng-click=\"clearModel()\"\n    ng-keypress='clearModel()'\n    tabindex=\"0\">\n    <span class=\"fa fa-fw fa-edit\"></span>\n  </div>\n</span>";
   return {
     require: 'ngModel',
     scope: {
@@ -8,9 +8,16 @@ angular.module('fslab.inputblocker', []).directive('fslabInputBlocker', ["$compi
       inputBlocker: '@fslabInputBlocker'
     },
     link: function(scope, element, attrs, ngModel) {
-      var render;
+      var inputBlocker, inputBlockerButton, render;
       element.addClass('has-input-blocker');
-      element.after($compile(inputBlocker)(scope));
+      inputBlocker = $compile(inputBlockerTemplate)(scope);
+      element.after(inputBlocker);
+      inputBlockerButton = angular.element(inputBlocker[0].querySelector(".input-blocker-button"));
+      element.bind('blur', function() {
+        return $timeout(function() {
+          return inputBlockerButton[0].focus();
+        }, 200);
+      });
       scope.viewValue = function() {
         return ngModel.$viewValue;
       };

@@ -6,38 +6,50 @@
     <link rel="stylesheet" href="dist/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css"/>
     <style>[ng-cloak] {
         display: none;
     }</style>
 </head>
 <body ng-app="demo" ng-controller="DemoCtrl">
 <div class='container-fluid typeahead-demo'>
-    <h3><b>Angular Bootstrap Input Blocker example</b> with UI Bootstrap typeahead</h3>
+    <h3>
+        <b>Angular Bootstrap Input Blocker example</b> with
+        <a href="https://angular-ui.github.io/bootstrap/#/typeahead">UI Bootstrap typeahead</a>
+    </h3>
     Type anything into input and click on any entry to check how it works.
-    <h4>without template</h4>
-    <input type="text"
-           ng-model="selected"
-           class="form-control"
-           uib-typeahead="browser as browser.name for browser in browsers"
-           typeahead-editable="false"
-           fslab-input-blocker>
-    <h4>with template</h4>
-    <script type="text/ng-template"
-            id="addressTemplate">
-        <a target="_blank" ng-href="{{value.address}}">
-            <span class="fa" ng-class="'fa-' + value.icon"></span>
-            <span>{{value.name}}</span>
-        </a>
-    </script>
-    <input type="text"
-           ng-model="selected"
-           class="form-control"
-           uib-typeahead="browser as browser.name for browser in browsers"
-           typeahead-editable="false"
-           fslab-input-blocker='addressTemplate'>
-    <h4>Model:</h4>
-    <pre>{{selected | json}}</pre>
+
+    <div class="row">
+        <div class="col-xs-5">
+            <h4>without template</h4>
+            <input type="text"
+                   ng-model="selected"
+                   class="form-control"
+                   uib-typeahead="browser as browser.name for browser in browsers"
+                   typeahead-editable="false"
+                   fslab-input-blocker>
+            <h4>with template</h4>
+            <script type="text/ng-template"
+                    id="addressTemplate">
+                <a target="_blank" ng-href="{{value.address}}">
+                    <span class="fa" ng-class="'fa-' + value.icon"></span>
+                    <span>{{value.name}}</span>
+                </a>
+            </script>
+            <input type="text"
+                   ng-model="selected"
+                   class="form-control"
+                   uib-typeahead="browser as browser.name for browser in browsers"
+                   typeahead-editable="false"
+                   fslab-input-blocker='addressTemplate'>
+            <h4>Model:</h4>
+            <pre>{{selected | json}}</pre>
+        </div>
+    </div>
 </div>
+<a class="github-fork-ribbon" href="https://github.com/iisg/input-blocker" title="Code on GitHub">Code on
+    GitHub</a>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap.min.js"></script>
